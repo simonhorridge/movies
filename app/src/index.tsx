@@ -1,11 +1,14 @@
+import App from './App';
+import { JsonDataSource } from 'src/DataAccess/JsonDataSource';
+import { Movie } from 'src/Dto/movie';
+import { MoviesData } from 'src/MoviesData';
+import registerServiceWorker from './registerServiceWorker';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <App />,
+    <App moviesData={new JsonDataSource<Movie[]>(MoviesData.moviesRaw)}/>,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();

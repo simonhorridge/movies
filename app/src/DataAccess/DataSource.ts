@@ -1,3 +1,3 @@
 export interface DataSource<TResult> {
-    getData(rawData: string): Promise<TResult>;
+    getData(): Promise<TResult>;
 }

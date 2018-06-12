@@ -6,12 +6,16 @@ interface MovieDetailsProps {
 }
 
 export class MovieDetails extends React.Component<MovieDetailsProps> {
-    render() {
+    public render() {
         return <div className="movie-view">
             {this.props.movie && <div className="movie-details">
-                <img src={this.props.movie.imageUrl} alt="no image" />
-                <label className="movie-title">{this.props.movie.title}</label>
-                <p className="movie-description">{this.props.movie.description}</p>
+                <div className="title">
+                    <img src={this.props.movie.imageUrl} alt="no image" />
+                    <label className="movie-title">{this.props.movie.title}</label>
+                </div>
+                <div className="description">
+                    <p className="movie-description">{this.props.movie.description}</p>
+                </div>
             </div>}
 
             {!this.props.movie && <div className="default-message">

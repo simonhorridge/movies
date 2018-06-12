@@ -11,19 +11,30 @@ interface MoviesState {
 }
 
 export class Movies extends React.Component<MoviesProps, MoviesState> {
-    render() {
-        return <div className="movies">
-            <ul onClick={() => {
-                this.setState({ selectedMovie: this.props.movies[1] })
-            }}>
-                {this.props.movies && this.props.movies.map(movie =>
-                    <li onClick={() => {
-                        this.setState({ selectedMovie: movie })
-                    }} key={movie.id}>{movie.title}</li>
-                )}
-            </ul>
+    public render() {
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="movies-component col-sm-12 col-md-3" >
+                        <ul>
+                            {this.props.movies && this.props.movies.map(movie =>
+                                <li
+                                    className={this.state && this.state.selectedMovie === movie ? "selected" : "" }
+                                    onClick={this.setMovie(movie)} key={movie.id}>{movie.title}</li>
+                            )}
+                        </ul>
+                    </div>
+                    <div className="col-sm-12 col-md-9">
+                        <MovieDetails movie={this.state && this.state.selectedMovie} />
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
-            <MovieDetails movie={this.state && this.state.selectedMovie} />
-        </div>
+    private setMovie(movie: any): (event: React.MouseEvent<HTMLLIElement>) => void {
+        return () => {
+            this.setState({ selectedMovie: movie });
+        };
     }
 }
