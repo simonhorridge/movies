@@ -1,0 +1,15 @@
+
+ 
+
+We’d like you to write a small application to allow users to browse a list of films and view detail for each film. 
+ We’d like you to use a javascript application framework/library to do this.  
+ Your app should include a service that will be used to retrieve film data.  
+ The service can consume a simple json file for now but it should be easy to swap in the url of a rest service in the future. 
+  For each film we’d like a title, description and an image url.  
+  You could use http://www.imdb.com/chart/top for inspiration for choosing some films, six titles should be plenty.  
+  Pages should be wireframes rather than fully featured graphic designs though we expect the layouts to work on mobile devices.
+
+ 
+
+We’d like your code to be source controlled and your local repository should be provided to us as a zip file or similar.  You should provide details of how to build and test your code
+
